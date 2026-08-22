@@ -39,7 +39,7 @@ html {
 body {
     background-color: var(--bg-body);
     color: var(--text-primary);
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Elms Sans', sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
@@ -257,7 +257,7 @@ ul {
     padding: 6.5rem 0 4rem;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .hero-avatar {
@@ -272,7 +272,7 @@ ul {
 }
 
 .hero-avatar:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .badge {
@@ -379,10 +379,18 @@ ul {
     overflow: hidden;
 }
 
+.project-card-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    box-shadow: 0 0 20px var(--accent-glow);
+    margin-bottom: 1.25rem;
+    transition: transform var(--transition-fast);
+}
+
 .project-placeholder {
     width: 80%;
     height: 60%;
-    border: 2px dashed var(--border);
     border-radius: var(--radius);
     display: flex;
     align-items: center;
@@ -571,7 +579,7 @@ footer {
     }
 
     .nav-links a { font-size: 0.95rem; }
-    .hero { padding: 9rem 0 6rem; }
+    .hero { padding: 9rem 0 6rem; align-items: flex-start;}
     .hero-avatar { width: 110px; height: 110px; }
     .hero-actions { flex-direction: row; width: auto; }
     .btn { width: auto; }
