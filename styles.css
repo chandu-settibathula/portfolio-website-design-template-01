@@ -14,9 +14,13 @@
     --accent-glow: rgba(99, 102, 241, 0.25);
     --accent-hover: #4f46e5;
     
+    --dot-color: rgba(255, 255, 255, 0.12);
+    --dot-size: 1.5px;
+    --dot-space: 24px;
+    
     --radius: 8px;
-    --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-    --transition-smooth: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-fast: 0.3s ease;
+    --transition-smooth: 0.4s ease;
     --container-width: 1140px;
 }
 
@@ -39,17 +43,23 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    position: relative;
 }
 
+/* --- Dot Grid Background Layer --- */
 body::before {
     content: '';
     position: fixed;
-    top: -100px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 0;
+    left: 0;
     width: 100vw;
-    height: 350px;
-    background: radial-gradient(circle, var(--accent-glow) 0%, rgba(9,10,15,0) 70%);
+    height: 100vh;
+    background-image: radial-gradient(var(--dot-color) var(--dot-size), transparent var(--dot-size));
+    background-size: var(--dot-space) var(--dot-space);
+    background-position: 0 0;
+    /* Softly fades the dot grid outward from the center */
+    mask-image: radial-gradient(circle at 50% 30%, black 30%, transparent 80%);
+    -webkit-mask-image: radial-gradient(circle at 50% 30%, black 30%, transparent 80%);
     z-index: -1;
     pointer-events: none;
 }
