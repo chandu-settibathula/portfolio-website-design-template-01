@@ -599,10 +599,6 @@ footer {
     box-shadow: 0 4px 12px var(--accent-glow);
 }
 
-.social-links a:hover ion-icon {
-    transform: scale(1.1);
-}
-
 /* --- Desktop Responsive --- */
 @media (min-width: 768px) {
     .nav-toggle { display: none; }
